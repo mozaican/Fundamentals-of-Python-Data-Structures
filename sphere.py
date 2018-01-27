@@ -23,4 +23,10 @@ class Sphere:
         self.volume = 4/3 * pi * self.radius ** 3
         return self.volume 
 
-
+if __name__ == '__main__':
+    radius = input("Insert the radius of your sphere: ")
+    s = Sphere(radius)
+    print("The sphere's diameter is", s.getDiameter())
+    print("The sphere's circumference is", s.getCircumference())
+    print("The sphere's area is", s.getArea())
+    print("The sphere's volume is", s.getVolume())
