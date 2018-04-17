@@ -2,7 +2,7 @@
 Interface for a collection of items stored in a type of
 object like an array bag.   
 """
-from array import Array  #needs to be done
+from array import Array
 
 class ArrayBag():
 
