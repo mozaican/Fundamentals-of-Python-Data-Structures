@@ -55,7 +55,7 @@ class Profiler():
         self.start = time.time()
 
     def stopClock(self):
-        self.elapsedTime = round(time.time()) - self.start, 3)
+        self.elapsedTime = round(time.time() - self.start, 3)
 
     def __str__(self):
         result = "Problem size: "
