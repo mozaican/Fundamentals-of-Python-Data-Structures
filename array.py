@@ -1,5 +1,9 @@
+"""
+An implementation of an array.
+"""
+
 class Array:
-    def __init__(self, capacity, fillValue = None):
+    def __init__(self, capacity, fillValue= None):
         self.items = list()
         self.logicalSize = 0
         self.fillValue = fillValue
@@ -7,7 +11,7 @@ class Array:
             self.items.append(fillValue)
 
     def __len__(self):
-        return len(self.items)     
+        return len(self.items)
 
     def __str__(self):
         return str(self.items)
@@ -20,7 +24,6 @@ class Array:
 
     def __setitem__(self, index, newItem):
         self.items[index] = newItem
-        
         if newItem != self.fillValue:
             self.logicalSize += 1
 
