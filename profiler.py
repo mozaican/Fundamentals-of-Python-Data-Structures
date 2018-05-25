@@ -34,12 +34,40 @@ class Profiler():
             self.lyst = []
             for count in range(size):
                 self.lyst.append(random.randint(1, size))
-
         self.exchCount = 0
         self.cmpCount = 0
         self.startClock()
         function(self.lyst, self)
         self.stopClock()
         print(self)
+
+    def exchange(self):
+        if self.exch:
+            self.exchCount += 1
+        if self.trace:
+            print(self.lyst)
+
+    def comparisons(self):
+        if self.comp:
+            self.cmpCount += 1
+    
+    def startClock(self):
+        self.start = time.time()
+
+    def stopClock(self):
+        self.elapsedTime = round(time.time()) - self.start, 3)
+
+    def __str__(self):
+        result = "Problem size: "
+        result += str(len(self.lyst)) + "\n"
+        result += "Elapsed time: "
+        result += str(self.elapsedTime) + "\n"
+        if self.comp:
+            result += "Comparisons: "
+            result += str(self.cmpCount) + "\n"
+        if self.exch:
+            result += "Exchanges: "
+            result += str(self.exchCount) + "\n"
+        return result  
 
 
