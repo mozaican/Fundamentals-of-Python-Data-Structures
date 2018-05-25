@@ -68,6 +68,6 @@ class Profiler():
         if self.exch:
             result += "Exchanges: "
             result += str(self.exchCount) + "\n"
-        return result  
+        return result
 
 
