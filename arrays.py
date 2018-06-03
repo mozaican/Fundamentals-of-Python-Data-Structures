@@ -33,7 +33,7 @@ class Array:
         growing the capacity with 1
         """
         if self.logicalSize == len(self.items):
-            temp = self.__init__(len(self.items) + 1)
+            temp = self.__class__(len(self.items) + 1)
             for i in range(len(self.items)):   
                 temp.items[i] = self.items[i] 
             self.items = temp.items
