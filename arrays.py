@@ -16,13 +16,18 @@ class Array:
         return iter(self.items)
 
     def __getitem__(self, index):
-        return self.items[index]
+        try:
+            return self.items[index]
+        except(TypeError, IndexError):
+            print("Index in not correct!")
 
     def __setitem__(self, index, newItem):
-        self.items[index] = newItem
-        
-        if newItem != self.fillValue:
-            self.logicalSize += 1
+        try:
+            self.items[index] = newItem
+            if newItem != self.fillValue:
+                self.logicalSize += 1
+        except(TypeError, IndexError):
+            print("Index is not correct!")
 
     def size(self):
         return self.logicalSize
@@ -46,8 +51,3 @@ if __name__ == '__main__':
     for i in range(len(a)):
         a[i] = i + 1
     print(a)  
-    a.grow()
-    a.grow()
-    print(a)
-    a.shrink()
-    print(a) 
