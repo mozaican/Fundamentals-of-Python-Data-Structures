@@ -26,3 +26,25 @@ class Array:
 
     def size(self):
         return self.logicalSize
+
+    def grow(self):
+        """
+        copy the actual list in the new one created after
+        growing the capacity with 1
+        """
+        if self.logicalSize == len(self.items):
+            temp = self.__init__(len(self.items) + 1)
+            for i in range(len(self.items)):   
+                temp.items[i] = self.items[i] 
+            self.items = temp.items
+
+    def shrink(self):
+        pass
+
+if __name__ == '__main__':
+    a = Array(5)
+    for i in range(len(a)):
+        a[i] = i + 1
+    print(a)    # [1, 2, 3, 4, 5]
+    a.grow()
+    print(a)    # None :( 
