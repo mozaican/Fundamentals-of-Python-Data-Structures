@@ -27,22 +27,27 @@ class Array:
     def size(self):
         return self.logicalSize
 
-    def grow(self, newItem):
+    def grow(self):
         if self.logicalSize == len(self.items):
-            temp = self.__class__(len(self.items) + 1)
+            temp = self.__class__(len(self.items) * 2)
             for i in range(len(self.items)):   
                 temp.items[i] = self.items[i] 
             self.items = temp.items
-            self.__setitem__(len(self.items) - 1, newItem)
-
 
     def shrink(self):
-        pass
+        if self.logicalSize <= len(self.items) // 2:
+            temp = self.__class__(len(self.items) // 2)
+            for i in range(self.logicalSize):
+                temp.items[i] = self.items[i]
+            self.items = temp.items
 
 if __name__ == '__main__':
     a = Array(5)
     for i in range(len(a)):
         a[i] = i + 1
     print(a)  
-    a.grow(5)
+    a.grow()
+    a.grow()
+    print(a)
+    a.shrink()
     print(a) 
