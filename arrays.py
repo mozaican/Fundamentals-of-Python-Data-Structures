@@ -46,6 +46,12 @@ class Array:
                 temp.items[i] = self.items[i]
             self.items = temp.items
 
+    def insert(self, index, item):
+        pass
+
+    def pop(self, index):
+        pass
+
 if __name__ == '__main__':
     a = Array(5)
     for i in range(len(a)):
