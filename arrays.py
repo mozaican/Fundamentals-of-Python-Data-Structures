@@ -46,11 +46,20 @@ class Array:
                 temp.items[i] = self.items[i]
             self.items = temp.items
 
-    def insert(self, index, item):
-        pass
+    def insert(self, index, newItem):
+        if self.logicalSize == len(self.items):
+            self.grow()
+        for i in range(self.logicalSize, index, -1):
+            self.itens[i] = self.items[i - 1]
+        self.items[index] = newItem
+        self.logicalSize += 1
 
     def pop(self, index):
-        pass
+        for i in range(index, self.logicalSize - 1):
+            self.items[i] = self.items[i + 1]
+        self.logicalSize -= 1
+        if self.logicalSize <= len(self.items) // 2:
+            self.shrink()
 
 if __name__ == '__main__':
     a = Array(5)
