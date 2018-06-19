@@ -16,14 +16,14 @@ class TwoWayNode(Node):
             temp = temp.next
         return count
 
-    def insert(self, data, position):
+    def insert(self, data, index):
         head = TwoWayNode(Node)
-        if head is None and position <= 0:
+        if head is None and index <= 0:
             head = Node(data, head)
         else:
-            while position > 1 and head.next != None:
+            while index > 1 and head.next != None:
                 head = head.next
-                position -= 1
+                index -= 1
             head.next = Node(data, head.next)
 
     def pop(self, index):
