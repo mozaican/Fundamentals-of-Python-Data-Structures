@@ -26,8 +26,3 @@ class TwoWayNode(Node):
                 raise IndexError
             head.next = Node(new_item, head.next)
 
-    def pop(self, index):
-        pass
-
-    def makeTwoWay(self):
-        pass
