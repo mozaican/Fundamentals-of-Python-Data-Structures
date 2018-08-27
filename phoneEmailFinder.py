@@ -1,5 +1,5 @@
 """
-Program that extracts phone number and email addresses from 
+Program that extracts phone numbers and email addresses from 
 a text and copy them in the clipboard for further manipulation.
 """
 
